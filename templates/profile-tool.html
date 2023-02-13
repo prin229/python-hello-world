@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<form action="/action_page.php">
+  <div class="container">
+<h2 style="background:#002050;margin-bottom:2px;color:white;padding:5px" align="center">Core Data Profiling Tool</h2>
+    <hr>
+
+    <label for="schema"><b>Schema Name</b></label>
+    <input type="text" placeholder="Enter Schema Name" name="schema" id="Schema" required>
+
+    <label for="psw"><b>Table Name</b></label>
+    <input type="password" placeholder="Enter Table Name" name="table" id="psw" required>
+    <label for="psw"><b>Enter Email</b></label>
+    <input type="password" placeholder="Enter Email" name="table" id="psw" required>
+    <label for="psw"><b>Select metrcs</b></label><br><br>
+ <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label for="vehicle1">All</label><br>
+  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2">Max Value</label><br>
+  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <label for="vehicle3">Min Value</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2">Default Value Count</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"># Emptys Value</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <label for="vehicle2"># Null Value</label><br>
+  
+  <br>
+    <button type="submit" class="registerbtn">Run</button>
+    
+  </div>
+  
+  <div class="container signin">
+    <p> <a href="#">you will be notified once output is completed!</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
