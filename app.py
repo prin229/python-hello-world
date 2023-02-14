@@ -20,4 +20,4 @@ def printres():
 
 @app.route("/")
 def hello():
-    return render_template('profile-tool.html')
+    return printres()
