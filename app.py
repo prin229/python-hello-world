@@ -20,4 +20,4 @@ def printres():
 
 @app.route("/")
 def hello():
-    return 'Hello World'
+    return printres()
