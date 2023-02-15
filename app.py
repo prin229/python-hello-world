@@ -23,7 +23,7 @@ def printres():
 		      print('error is : '+str(e))
 
 
-print(printres())
+#print(printres())
 @app.route("/")
 def hello():
     return printres()
