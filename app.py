@@ -12,11 +12,11 @@ def printres():
 	try:
 		with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
 			with conn.cursor() as cursor:
-				cursor.execute("SELECT id from demo_tb")
+				cursor.execute("SELECT * from demo_tb")
 				row = cursor.fetchone()
 				while row:
 					#print (str(row[0]) + " ")
-					res +=str(row[0])+ " "
+					res +=str(row[0])+ " "+str(row[1])+"</br>"
 					row = cursor.fetchone()
 		return res;
 	except Exception as e:
@@ -43,6 +43,6 @@ def insert_record():
 #print(insert_record())
 @app.route("/")
 def hello():
-    return insert_record()
+    return printres()
 	
 
