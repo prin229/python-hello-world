@@ -8,20 +8,22 @@ def printres():
 	username = 'prince'
 	password = 'Azure@feb2023'   
 	driver= '{ODBC Driver 18 for SQL Server}'
-	print(driver)
-	"""try:
+	res=""
+	try:
 		with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
 			with conn.cursor() as cursor:
 				cursor.execute("SELECT id from demo_tb")
 				row = cursor.fetchone()
 				while row:
-					print (str(row[0]) + " ")
+					#print (str(row[0]) + " ")
+					res +=str(row[0])+ " "
 					row = cursor.fetchone()
+		return res;
 	except Exception as e:
-		      print('error is : '+str(e))"""
+		      print('error is : '+str(e))
 
 
-
+printres()
 @app.route("/")
 def hello():
     return printres()
