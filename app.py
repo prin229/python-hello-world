@@ -40,7 +40,7 @@ def insert_record():
 	except Exception as e:
 		print('error is :'+str(e))
 	
-print(insert_record())
+#print(insert_record())
 @app.route("/")
 def hello():
     return insert_record()
