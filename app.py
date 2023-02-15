@@ -20,7 +20,9 @@ def printres():
 		      print('error is : '+str(e))
 
 
-printres()
+
 @app.route("/")
 def hello():
-    return 'Hellow world'
+    return printres()
+	
+hello()
