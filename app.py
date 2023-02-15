@@ -23,7 +23,24 @@ def printres():
 		      print('error is : '+str(e))
 
 
-#print(printres())
+def insert_record():
+	server = 'sql-demo-serv.database.windows.net'
+	database = 'sql-demo'
+	username = 'prince'
+	password = 'Azure@feb2023'   
+	driver= '{ODBC Driver 18 for SQL Server}'
+	cnxn = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
+	cursor = cnxn.cursor()
+	# Do the insert
+	try:
+		cursor.execute("insert into demo_tb values ( 5 , 'awesome library')")
+		#commit the transaction
+		cnxn.commit()
+		return True
+	except Exception as e:
+		return False
+	
+print(insert_record())
 @app.route("/")
 def hello():
     return printres()
