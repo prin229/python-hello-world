@@ -36,11 +36,11 @@ def insert_record():
 		cursor.execute("insert into demo_tb values ( 6 , 'awesome library')")
 		#commit the transaction
 		cnxn.commit()
-		return True
+		return "Inserted Successfully"
 	except Exception as e:
-		return False
+		print('error is :'+str(e))
 	
-#print(insert_record())
+print(insert_record())
 @app.route("/")
 def hello():
     return insert_record()
