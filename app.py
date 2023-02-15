@@ -33,16 +33,16 @@ def insert_record():
 	cursor = cnxn.cursor()
 	# Do the insert
 	try:
-		cursor.execute("insert into demo_tb values ( 5 , 'awesome library')")
+		cursor.execute("insert into demo_tb values ( 6 , 'awesome library')")
 		#commit the transaction
 		cnxn.commit()
 		return True
 	except Exception as e:
 		return False
 	
-print(insert_record())
+#print(insert_record())
 @app.route("/")
 def hello():
-    return printres()
+    return insert_record()
 	
 
