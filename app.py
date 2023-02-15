@@ -14,7 +14,7 @@ def printres():
 				cursor.execute("SELECT id from demo_tb")
 				row = cursor.fetchone()
 				while row:
-					print (str(row[0]) + " " + str(row[1]))
+					print (str(row[0]) + " ")
 					row = cursor.fetchone()
 	except Exception as e:
 		      print('error is : '+str(e))
