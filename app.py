@@ -8,7 +8,7 @@ def printres():
 	username = 'prince'
 	password = 'Azure@feb2023'   
 	driver= '{ODBC Driver 18 for SQL Server}'
-	return driver
+	print(driver)
 	"""try:
 		with pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password) as conn:
 			with conn.cursor() as cursor:
