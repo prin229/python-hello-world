@@ -19,7 +19,7 @@ body {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=email] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -28,7 +28,7 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus, input[type=email]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -69,7 +69,7 @@ a {
 </head>
 <body>
 
-<form action="/action_page.php">
+<form action="{{ url_for('handle_data') }}" method="post">
   <div class="container">
 <h2 style="background:#002050;margin-bottom:2px;color:white;padding:5px" align="center">Core Data Profiling Tool</h2>
     <hr>
@@ -78,32 +78,32 @@ a {
     <input type="text" placeholder="Enter Schema Name" name="schema" id="Schema" required>
 
     <label for="psw"><b>Table Name</b></label>
-    <input type="password" placeholder="Enter Table Name" name="table" id="psw" required>
+    <input type="text" placeholder="Enter Table Name" name="table" id="psw" required>
     <label for="psw"><b>Enter Email</b></label>
-    <input type="password" placeholder="Enter Email" name="table" id="psw" required>
+    <input type="email" placeholder="Enter Email" name="email" id="psw" required>
     <label for="psw"><b>Select metrcs</b></label><br><br>
- <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+ <input type="checkbox" id="vehicle1" name="metrics" value="all">
   <label for="vehicle1">All</label><br>
-  <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+  <input type="checkbox" id="vehicle2" name="metrics" value="max_value">
   <label for="vehicle2">Max Value</label><br>
-  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+  <input type="checkbox" id="vehicle3" name="metrics" value="min_value">
   <label for="vehicle3">Min Value</label><br>
-    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <input type="checkbox" id="vehicle2" name="metrics" value="default_value">
   <label for="vehicle2">Default Value Count</label><br>
-    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <input type="checkbox" id="vehicle2" name="metrics" value="empty_value">
   <label for="vehicle2"># Emptys Value</label><br>
-    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <input type="checkbox" id="vehicle2" name="metrics" value="null_value">
   <label for="vehicle2"># Null Value</label><br>
   
   <br>
     <button type="submit" class="registerbtn">Run</button>
-    
+</form>    
   </div>
   
   <div class="container signin">
     <p> <a href="#">you will be notified once output is completed!</a>.</p>
   </div>
-</form>
+
 
 </body>
 </html>
