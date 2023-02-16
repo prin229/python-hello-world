@@ -40,9 +40,9 @@ def handle_data():
 		cursor.execute("insert into demo_tb values ( 6 , 'awesome library')")
 		#commit the transaction
 		cnxn.commit()
-		return "Inserted Successfully"
+		return render_template('success.html')
 	except Exception as e:
-		print('error is :'+str(e))
+		return render_template('error.html')
 	
 
 @app.route("/")
