@@ -1,5 +1,5 @@
 import pyodbc 
-from flask import Flask , render_template
+from flask import Flask , render_template,request
 app = Flask(__name__)
 
 def printres():
@@ -22,8 +22,12 @@ def printres():
 	except Exception as e:
 		      print('error is : '+str(e))
 
-
-def insert_record():
+@app.route('/handle_data', methods=['POST'])
+def handle_data():
+	table_name = request.form['table']
+	schema_name=request.form['schema']
+	email_name=request.form['email']
+	metrics=request.form.getlist('metrics')
 	server = 'sql-demo-serv.database.windows.net'
 	database = 'sql-demo'
 	username = 'prince'
@@ -40,9 +44,9 @@ def insert_record():
 	except Exception as e:
 		print('error is :'+str(e))
 	
-#print(insert_record())
+
 @app.route("/")
 def hello():
-    return printres()
+    return render_template('profile-tool.html')
 	
 
