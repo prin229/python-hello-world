@@ -46,7 +46,7 @@ def run_sample():
     try:
         # Create the BlockBlobService that is used to call the Blob service for the storage account
         blob_service_client = BlockBlobService(
-            account_name='blobinputdata', account_key='ogHP2hQWPtChoxFXA0CXF6S1HtykpyZ0kg0fL9/K9BbxH7U9eiUb/WbesMEUz6XrrDv8ro1tO0PR+ASt2HmXqg==')
+            account_name='princeaccountstorage', account_key='rMESDBSw8Xq0xDvtIbZZBSHW3XOL9bkVrRxqJ10+sXLPEkROfEd1ldsI9Y+yXSgJyh2fry7Wtsq2+AStcb4O+Q==')
 
         # Create a container called 'quickstartblobs'.
         container_name = 'quickstartblobs'
