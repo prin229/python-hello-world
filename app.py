@@ -7,8 +7,12 @@ from azure.storage.blob import BlockBlobService, PublicAccess
 from flask import Flask , render_template,request
 app = Flask(__name__)
 
-
-def run_sample():
+@app.route('/handle_data', methods=['POST'])
+def handle_data():
+    table_name = request.form['table']
+    schema_name=request.form['schema']
+    email_name=request.form['email']
+    metrics=request.form.getlist('metrics')
     try:
         # Create the BlockBlobService that is used to call the Blob service for the storage account
         blob_service_client = BlockBlobService(
@@ -30,8 +34,8 @@ def run_sample():
         full_path_to_file = os.path.join(local_path, local_file_name)
 
 		# Write text to the file.
-        header = ['name', 'area', 'country_code2', 'country_code3']
-        data = ['Afghanistan', 652090, 'AF', 'AFG']
+        header = ['schema', 'table', 'email', 'metrics']
+        data = [schema_name, table_name, email_name, metrics]
         file = open(full_path_to_file,  'w',encoding='UTF8')
         writer = csv.writer(file)
         writer.writerow(header)
@@ -94,8 +98,8 @@ def printres():
 		      print('error is : '+str(e))
 
 #run_sample()
-@app.route('/handle_data', methods=['POST'])
-def handle_data():
+#@app.route('/handle_data', methods=['POST'])
+def check_data_arch():
 	table_name = request.form['table']
 	schema_name=request.form['schema']
 	email_name=request.form['email']
@@ -117,8 +121,9 @@ def handle_data():
 		return render_template('error.html')
 	
 
+#handle_data()
 @app.route("/")
 def hello():
-    return run_sample()
+    return render_template('profile-tool.html')
 	
 
