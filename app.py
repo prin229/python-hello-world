@@ -71,11 +71,11 @@ def handle_data():
         # Clean up resources. This includes the container and the temp files
         #blob_service_client.delete_container(container_name)
         os.remove(full_path_to_file)
-        return 'successfully uploaded'
+        return render_template('success.html')
         #os.remove(full_path_to_file2)
     except Exception as e:
         print(e)
-        return 'failed..'+str(e)
+        return render_template('error.html')
 
 def printres():
 	server = 'sql-demo-serv.database.windows.net'
