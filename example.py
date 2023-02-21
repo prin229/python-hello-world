@@ -26,6 +26,7 @@
 import os
 import uuid
 import sys
+import csv
 from azure.storage.blob import BlockBlobService, PublicAccess
 
 # ---------------------------------------------------------------------------------------------------------
@@ -60,12 +61,16 @@ def run_sample():
         local_path = os.path.expanduser("~/Sample")
         if not os.path.exists(local_path):
             os.makedirs(os.path.expanduser("~/Sample"))
-        local_file_name = "QuickStart_" + str(uuid.uuid4()) + ".txt"
+        local_file_name = "QuickStart_" + str(uuid.uuid4()) + ".csv"
         full_path_to_file = os.path.join(local_path, local_file_name)
 
-        # Write text to the file.
-        file = open(full_path_to_file,  'w')
-        file.write("Hello, World!")
+		# Write text to the file.
+        header = ['name', 'area', 'country_code2', 'country_code3']
+        data = ['Afghanistan', 652090, 'AF', 'AFG']
+        file = open(full_path_to_file,  'w',encoding='UTF8')
+        writer = csv.writer(file)
+        writer.writerow(header)
+        writer.writerow(data)
         file.close()
 
         print("Temp file = " + full_path_to_file)
