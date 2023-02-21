@@ -78,7 +78,7 @@ def run_sample():
 
         # Upload the created file, use local_file_name for the blob name
         blob_service_client.create_blob_from_path(
-            container_name, local_file_name, full_path_to_file)
+            container_name, 'input/'+local_file_name, full_path_to_file)
 
         # List the blobs in the container
         #print("\nList blobs in the container")
