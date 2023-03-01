@@ -124,6 +124,6 @@ def check_data_arch():
 #handle_data()
 @app.route("/")
 def hello():
-    return render_template('profile-tool.html')
+    return render_template('home.html')
 	
 
