@@ -16,7 +16,7 @@ def handle_data():
     try:
         # Create the BlockBlobService that is used to call the Blob service for the storage account
         blob_service_client = BlockBlobService(
-            account_name='blobinputdata', account_key='ogHP2hQWPtChoxFXA0CXF6S1HtykpyZ0kg0fL9/K9BbxH7U9eiUb/WbesMEUz6XrrDv8ro1tO0PR+ASt2HmXqg==')
+            account_name='inputdataforblob', account_key='stLLHyq8dJ9fePKuqcB37HVXe6zIugXOoQkyig5lXHt1HasCnRgm64nRhlFSKW23ZeRPm+jg5UsU+AStMMuGQA==')
 
         # Create a container called 'quickstartblobs'.
         container_name = 'quickstartblobs'
