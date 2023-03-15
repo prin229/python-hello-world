@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <style>
-input[type=email], select {
+input[type=text], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -12,7 +12,7 @@ input[type=email], select {
 }
 
 input[type=submit] {
-  width: 70%;
+  width: 65%;
   background-color: #4CAF50;
   color: white;
   padding: 20px 20px;
@@ -40,8 +40,8 @@ div {
 </style>
 <script>
 var schemaobj = {
-  "customer360": ['cust-tb_one','cust-tb_two'] ,
-  "dealer360":['dlr-tb-one','dlr-tb-two']  
+  "customer360": ['ms_bbwc_bis_retn_c','gcs_bbwc_perf_dtl'] ,
+  "cdao_core_data":['ms_bbwc_data_comp','ms_bbwc_core_comp']  
   }
 window.onload = function() {
   var schema = document.getElementById("schema");
@@ -75,7 +75,7 @@ window.onload = function() {
   </select>
 
      <label for="email"><b>Enter Email</b></label>
-    <input type="email" placeholder="Enter Email" name="email" id="email" required>
+    <input type="text" placeholder="Enter multiple email addresses separated by comma (',')" name="email" id="email" required>
 	
 	 <label for="metrics"><b>Select metrics</b></label><br><br>
  <input type="checkbox" id="metrics" name="metrics" value="all">
@@ -84,11 +84,9 @@ window.onload = function() {
   <label for="vehicle2">Max Value</label><br>
   <input type="checkbox" id="metrics" name="metrics" value="min_value">
   <label for="vehicle3">Min Value</label><br>
-    <input type="checkbox" id="metrics" name="metrics" value="default_value">
-  <label for="vehicle2">Default Value Count</label><br>
     <input type="checkbox" id="metrics" name="metrics" value="missing_value">
   <label for="vehicle2">Missing Value Count(None,Null,Empty string)</label><br>
-    <input type="checkbox" id="metrics" name="metrics" value="top_five">
+    <input type="checkbox" id="metrics" name="metrics" value="top_5_value">
   <label for="vehicle2">Top 5 Occurrences</label><br><br>
   
     <input type="submit" value="Submit">
